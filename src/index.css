@@ -1,0 +1,19 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: white;
+}
+/* note to self you need to change this to a * instead root: as we had before it was causing weird behavior */
+
+#container_master {
+  width: 100vw;
+  height: 100vh;
+}
+
+#body {
+   width: 100vw;
+   display: flex;
+   align-items: center;  
+   justify-content: center;
+}
