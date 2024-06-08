@@ -7,8 +7,6 @@ import "../css/widgetCalender.css";
 export default function CalenderWidget()
 
 {
-    
-
     return (
         <>
             <div id="calender_container">

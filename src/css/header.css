@@ -5,3 +5,7 @@
   justify-content: space-around;
   border: 1px solid grey;
 }
+
+#header_padding_margin {
+  margin: 1rem; 
+}
