@@ -3,8 +3,9 @@ import Day from "./Day";
 
 export default function Calender()
 {
-    const [calenderDays, setCalenderDays] = useState([]);
-    const [month, setMonth] = useState("jan");
+    const [arrayCalenderDays, setArrayCalenderDays] = useState([]);
+    const [month, setMonth] = useState("feb");
+    // honestly just gonna start naming these with the data structure that i am using since there are not types in js
 
     const daysPerMonth = {
         jan: 31,
@@ -26,37 +27,26 @@ export default function Calender()
         populateInitialCalender(month);
     }, [])
 
-
     function populateInitialCalender(month)
     {
         let clone = [];
+        let weekdays = ["S", "M", "T", "W", "T", "F", "S"];
 
-        let weekdays = {
-            sun: "S",
-            mon: "M",
-            tues: "T",
-            wend: "W",
-            thur: "T",
-            fri: "F",
-            sat: "S",
-        }
+        let objValues = Object.values(weekdays);
 
-        let objvalues = Object.values(weekdays);
-
-
-        for (let i = 0; i < daysPerMonth[month] + 8; i++)
+        for (let i = 0; i <= daysPerMonth[month] + 7; i++)
         {
             if (i < 7)
             {
-                clone.push(objvalues[i]);
-            } else if (i > 7)
+                clone.push(objValues[i]);
+            } else if (i > 6)
             {
                 clone.push(i - 7);
             }
         }
-        setCalenderDays(clone);
-    }
 
+        setArrayCalenderDays(clone);
+    }
 
     return (
         <>
@@ -65,7 +55,7 @@ export default function Calender()
                     <h3>{month}</h3>
                     <div id="days_box">
                         {
-                            calenderDays.map((x, y) =>
+                            arrayCalenderDays.map((x, y) =>
                             {
                                 return <Day key={y} day={x} />
                             })

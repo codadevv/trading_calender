@@ -1,6 +1,6 @@
 #calender_container {
   width: 90%;
-  background-color: pink;
+  background-color: rgb(12, 12, 12);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -10,7 +10,7 @@
 #links {
   width: 25%;
   height: 100%;
-  background-color: aqua;
+  background-color: rgb(95, 95, 95);
 }
 
 #calender {
@@ -55,4 +55,12 @@
 
 #day_box {
   border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#day_number {
+   font-size: 1rem;
 }

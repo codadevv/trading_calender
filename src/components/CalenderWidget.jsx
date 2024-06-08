@@ -5,10 +5,9 @@ import "../css/widgetCalender.css";
 
 
 export default function CalenderWidget()
-{
-    // month may 31 days
-    const [calenderDays, setCalenderDays] = useState(Array(31).fill(null));
 
+{
+    
 
     return (
         <>
