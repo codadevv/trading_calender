@@ -5,9 +5,11 @@ export default function Calender()
 {
     const [arrayCalenderDays, setArrayCalenderDays] = useState([]);
     const [month, setMonth] = useState("feb");
-    const [listOfCharacters, setListOfCharacers] = useState([]);
-    const [listOfDays, setListOfDays] = useState()
-    // honestly just gonna start naming these with the data structure that i am using since there are not types in js
+
+    useEffect(() =>
+    {
+        return populateInitialCalender(month);
+    }, [])
 
     const daysPerMonth = {
         jan: 31,
@@ -24,33 +26,12 @@ export default function Calender()
         dec: 31,
     }
 
-    useEffect(() =>
-    {
-        populateInitialCalender(month);
-    }, [])
-
-    const numbersArray = [1, 2, 3, 4, 5, 6, 7];
-
-    function filterArrayMinMax(min, max, array)
-    {
-        let clone = [];
-
-        array.forEach(element =>
-        {
-            if (element >= min && element <= max)
-            {
-                clone.push(element);
-            }
-        });
-
-        console.log("The array has been filtered");
-        console.log(clone);
-    }
-
     function populateInitialCalender(month)
     {
         let clone = [];
         let weekdays = ["S", "M", "T", "W", "T", "F", "S"];
+
+
 
         let objValues = Object.values(weekdays);
 
@@ -68,15 +49,10 @@ export default function Calender()
         setArrayCalenderDays(clone);
     }
 
-    const buttonStyle = {
-        backgroundColor: "tan",
-        color: "black"
-    }
 
     return (
         <>
             <div id="calender">
-                <button style={buttonStyle} onClick={() => filterArrayMinMax(2, 6, numbersArray)}>filter array</button>
                 <div id="calender_box">
                     <div id="calender_top">
                         <h3>{month}</h3>
